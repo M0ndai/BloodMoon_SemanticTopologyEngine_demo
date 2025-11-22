@@ -147,7 +147,7 @@ All visualization components are optional.
 Clone the repository:
 
 ```bash
-git clone https://github.com/<your-username>/SemanticTopologyEngine.git
+git clone https://github.com/M0ndai/BloodMoon_SemanticTopologyEngine_demo.git
 cd SemanticTopologyEngine
 ```
 
