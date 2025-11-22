@@ -1,236 +1,157 @@
-# SemanticTopologyEngine (STE)
-### A minimal research framework for semantic geometry and morphotype dynamics
+# **SemanticTopologyEngine (STE)**
+
+### A Research-Oriented Framework for Semantic Geometry and Morphotype Dynamics
 
 **License: Apache-2.0**
 
 ---
 
-## Abstract
-The **SemanticTopologyEngine (STE)** is a lightweight, modular framework for exploring high-dimensional semantic geometry.  
-It models conceptual entities as vector-based structures termed *Morphotypes*, which can undergo deformation, stabilization, inversion, and controlled stochastic perturbation.
+## **Abstract**
 
-**The STE exists to isolate semantic topology from cognition, ecology, swarm dynamics, and higher-order systemic behavior.**
-
-Its purpose is to provide a clear, minimal, and reproducible foundation for research on semantic dynamics and topological representations.
+The *SemanticTopologyEngine (STE)* is a minimal, modular research framework for exploring high-dimensional semantic geometry.
+The system models conceptual structures as *Morphotypes*—vector representations that undergo deformation, stabilization, inversion, and controlled stochastic perturbation.
+The goal of STE is to provide a reproducible, interpretable experimental platform for studying the topological behavior of semantic systems independent of cognition, ecology, or agent-based dynamics.
 
 ---
 
-## 1. Introduction
-Most semantic systems treat meaning as fixed embeddings within static vector spaces.  
-The STE adopts a dynamic perspective: semantic structures are modeled as geometric objects whose topology changes under specific transformation operators.
+## **1 Introduction**
 
-This enables controlled experiments on:
+Vector-based semantic systems typically rely on static embeddings.
+In contrast, STE adopts a *dynamic geometric* viewpoint: meaning is represented as a deformable structure whose topology evolves under a set of well-defined operators.
 
-- drift-induced deformation  
-- coherence-based stabilization  
-- topological inversion  
-- axis-aligned compression  
-- structured stochastic perturbation  
-- basic split and merge operations  
+STE enables controlled investigations of:
 
-The implementation focuses exclusively on the **topological layer** and does **not** include agent-based, ecological, cognitive, or emergent components.
+* drift-based deformation
+* coherence-driven stabilization
+* axis inversion and counter-aligned semantics
+* compression and relaxation dynamics
+* structured noise injection
+* basic split–merge transformations
 
----
-
-## 2. Core Concepts
-
-### 2.1 Morphotypes
-A **Morphotype** is a vector of dimensionality *d* representing a semantic structure.  
-It supports:
-
-- linear deformation along a given direction  
-- coherence-based relaxation  
-- axis inversion  
-- controlled splitting and merging  
-- optional latent-space projection  
-
-Morphotypes are the primary units manipulated by the STE.
+The framework isolates **topological processes** and deliberately omits higher-level cognitive or emergent components.
 
 ---
 
-### 2.2 Drift
-**Drift** represents directed change in semantic space:
+## **2 Core Concepts**
 
-\[
+### **2.1 Morphotypes**
+
+A Morphotype is a *d*-dimensional vector representing a semantic configuration.
+Operations include:
+
+* linear deformation
+* coherence relaxation
+* axis inversion
+* controlled splitting/merging
+* (optional) latent projections
+
+### **2.2 Drift**
+
+Directed semantic displacement:
+
+[
 d = m_{t+1} - m_t
-\]
+]
 
-It models deformation, directional movement, and exploratory variation.
+### **2.3 Coherence**
 
----
+Stabilizing transformation:
 
-### 2.3 Coherence
-**Coherence** reduces drift magnitude and stabilizes Morphotypes:
-
-\[
+[
 m' = m - \lambda d
-\]
+]
 
-Coherence maintains structural consistency during iterative transformations.
+### **2.4 Inversion**
 
----
+Counter-aligned drift:
 
-### 2.4 Inversion
-The **Inversion Engine** computes the negated drift vector:
-
-\[
+[
 inv(d) = -d
-\]
+]
 
-**Inversion enables the study of counter-aligned semantic axes and stability breakdowns.**
+### **2.5 Focus Fields**
 
----
+Scaled inverted drift for axis-focused modification:
 
-### 2.5 Focus Fields
-A **Focus Field** applies a scaled inverted drift to a Morphotype:
-
-\[
+[
 m' = m + (-d \cdot \alpha)
-\]
+]
 
-Focus Fields **highlight or amplify structural features**, but **they are not stabilizers**.  
-They act as *manipulative directional operators*, not regulatory mechanisms.
+### **2.6 Artifacts**
+
+Structured stochastic perturbations used to assess robustness and diversification.
 
 ---
 
-### 2.6 Artifacts
-Artifacts introduce structured stochastic perturbations derived from previous states or predefined noise fields.  
-They are used to study:
+## **3 System Architecture**
 
-- robustness  
-- mutation behavior  
-- diversification dynamics  
+STE includes:
 
-**Artifacts do NOT represent semantic entities — only structured perturbations.**
+* Morphotype Manager
+* Drift Module
+* Coherence Module
+* Inversion Module
+* Focus Field Module
+* Artifact Engine (optional)
+* Latent Visualizer (optional)
 
-Example configuration:
+Dependencies: Python 3.10+, NumPy.
+
+---
+
+## **4 Usage Example**
 
 ```python
-artifact = {
-    "mode": "distributed_noise",
-    "entropy_bias": 0.12,
-    "mutation_gain": 0.3,
-    "coherence_penalty": -0.05,
-}
-```
-
-3. System Architecture
-
-SemanticTopologyEngine
-
-- Morphotype Manager
-- Drift Module
-- Coherence Module
-- Inversion Module
-- Focus Field Module
-- Artifact Engine (optional)
-- Latent Visualizer (optional)
-
-The engine requires only Python 3.10+ and NumPy.
-All visualization and latent-projection components are optional.
-4. Installation
-
-Clone the repository:
-
-git clone https://github.com/M0ndai/BloodMoon_SemanticTopologyEngine_demo.git
-cd SemanticTopologyEngine
-
-Install in editable mode:
-
-pip install -e .
-
-Minimal dependency:
-
-pip install numpy
-
-5. Usage
-5.1 Minimal example
-
 from ste.engine import SemanticTopologyEngine
 
-# initialize
 ste = SemanticTopologyEngine(dim=32)
-
-# register a concept
 ste.register("sample")
-m = ste["sample"]
 
-# drift deformation
+m = ste["sample"]
 drift = m.morphotype * 0.1
 m.stretch(drift)
 
-# focus field (inverted drift)
 focus = -drift
 m.stretch(focus)
+```
 
-print(m.morphotype)
+---
 
-5.2 Running demo scripts
+## **5 Applications**
 
-python demo/minimal_run.py
-python demo/drift_focus_demo.py
-python demo/artifact_demo.py
+* semantic topology and geometry
+* morphotype evolution
+* drift/coherence interaction
+* robustness testing
+* inversion and counter-alignment studies
+* semantic clustering diagnostics
 
-6. Visualization (optional)
+---
 
-If a compatible latent-model backend is installed, the STE can generate:
+## **6 Roadmap**
 
-    morphotype visualizations
+* GPU backend
+* semantic phase diagrams
+* drift spectra
+* adaptive coherence
+* multi-instance execution
+* artifact learning
 
-    inverted-latent comparisons
+---
 
-    drift sequences
+## **7 Disclaimer**
 
-These components are optional and not part of the minimal core.
-7. Research Applications
+This repository contains **only** the topological layer.
+It does *not* include:
 
-The engine is suitable for:
+* agent models
+* ecological frameworks
+* swarm or consensus mechanisms
+* identity/intent systems
+* emergent behavior modules
 
-    semantic topology analysis
+The code is provided solely for research and educational purposes.
 
-    morphotype evolution studies
+---
 
-    drift/coherence interaction research
-
-    robustness testing via structured noise
-
-    axis inversion and counter-alignment experiments
-
-    semantic clustering diagnostics
-
-8. Roadmap
-
-Potential extensions include:
-
-    GPU-accelerated backend
-
-    semantic phase diagrams
-
-    drift-spectrum analysis
-
-    adaptive coherence optimization
-
-    multi-instance execution environment
-
-    artifact learning mechanisms
-
-9. License
-
-This project is distributed under the Apache License 2.0.
-See the file LICENSE for full license text.
-10. Disclaimer
-
-This repository contains only the topological layer of the STE.
-It does not include:
-
-    agent systems
-
-    ecological components
-
-    swarm logic
-
-    identity or intent structures
-
-    emergent behavioral modules
-
-The project is intended for research and educational use.
+---
