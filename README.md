@@ -110,8 +110,6 @@ artifact = {
 ```
 3. System Architecture
 
-vbnet
-Code kopieren
 SemanticTopologyEngine
 │
 ├── Morphotype Manager
@@ -128,28 +126,20 @@ All visualization and latent-projection components are optional.
 
 Clone the repository:
 
-bash
-Code kopieren
-git clone https://github.com/<your-username>/SemanticTopologyEngine.git
+git clone https://github.com/M0ndai/BloodMoon_SemanticTopologyEngine_demo.git
 cd SemanticTopologyEngine
 
 Install in editable mode:
 
-bash
-Code kopieren
 pip install -e .
 
 Minimal dependency:
 
-bash
-Code kopieren
 pip install numpy
 
 5. Usage
 5.1 Minimal example
 
-python
-Code kopieren
 from ste.engine import SemanticTopologyEngine
 
 # initialize
@@ -171,8 +161,6 @@ print(m.morphotype)
 
 5.2 Running demo scripts
 
-bash
-Code kopieren
 python demo/minimal_run.py
 python demo/drift_focus_demo.py
 python demo/artifact_demo.py
