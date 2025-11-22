@@ -107,7 +107,7 @@ artifact = {
     "mutation_gain": 0.3,
     "coherence_penalty": -0.05,
 }
-
+``
 3. System Architecture
 
 vbnet
