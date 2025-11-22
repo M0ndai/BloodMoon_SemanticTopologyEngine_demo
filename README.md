@@ -1,5 +1,3 @@
-# BloodMoon_SemanticTopologyEngine_demo
-A research framework for modeling and evolving semantic geometry.
 # SemanticTopologyEngine (STE)
 ### A minimal research framework for semantic geometry and morphotype dynamics
 
