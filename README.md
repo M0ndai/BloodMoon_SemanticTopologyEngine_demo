@@ -111,14 +111,13 @@ artifact = {
 3. System Architecture
 
 SemanticTopologyEngine
-│
-├── Morphotype Manager
-├── Drift Module
-├── Coherence Module
-├── Inversion Module
-├── Focus Field Module
-├── Artifact Engine (optional)
-└── Latent Visualizer (optional)
+-Morphotype Manager
+-Drift Module
+-Coherence Module
+-Inversion Module
+-Focus Field Module
+-Artifact Engine (optional)
+-Latent Visualizer (optional)
 
 The engine requires only Python 3.10+ and NumPy.
 All visualization and latent-projection components are optional.
