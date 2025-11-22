@@ -9,12 +9,14 @@
 The **SemanticTopologyEngine (STE)** is a lightweight, modular framework for exploring high-dimensional semantic geometry.  
 It models conceptual entities as vector-based structures termed *Morphotypes*, which can undergo deformation, stabilization, inversion, and controlled stochastic perturbation.
 
-The purpose of this repository is to provide a clear, minimal, and reproducible foundation for research on semantic dynamics and topological representations.
+**The STE exists to isolate semantic topology from cognition, ecology, swarm dynamics, and higher-order systemic behavior.**
+
+Its purpose is to provide a clear, minimal, and reproducible foundation for research on semantic dynamics and topological representations.
 
 ---
 
 ## 1. Introduction
-Many semantic systems treat meaning as fixed embeddings within static vector spaces.  
+Most semantic systems treat meaning as fixed embeddings within static vector spaces.  
 The STE adopts a dynamic perspective: semantic structures are modeled as geometric objects whose topology changes under specific transformation operators.
 
 This enables controlled experiments on:
@@ -26,7 +28,7 @@ This enables controlled experiments on:
 - structured stochastic perturbation  
 - basic split and merge operations  
 
-The implementation focuses exclusively on the **topological layer** and does **not** include agent-based, ecological, or emergent components.
+The implementation focuses exclusively on the **topological layer** and does **not** include agent-based, ecological, cognitive, or emergent components.
 
 ---
 
@@ -34,7 +36,7 @@ The implementation focuses exclusively on the **topological layer** and does **n
 
 ### 2.1 Morphotypes
 A **Morphotype** is a vector of dimensionality *d* representing a semantic structure.  
-It supports the following operations:
+It supports:
 
 - linear deformation along a given direction  
 - coherence-based relaxation  
@@ -42,12 +44,12 @@ It supports the following operations:
 - controlled splitting and merging  
 - optional latent-space projection  
 
-Morphotypes serve as the primary units manipulated by the STE.
+Morphotypes are the primary units manipulated by the STE.
 
 ---
 
 ### 2.2 Drift
-**Drift** represents a directed change in semantic space:
+**Drift** represents directed change in semantic space:
 
 \[
 d = m_{t+1} - m_t
@@ -64,7 +66,7 @@ It models deformation, directional movement, and exploratory variation.
 m' = m - \lambda d
 \]
 
-Coherence controls dispersion and maintains structural consistency during iterative transformations.
+Coherence maintains structural consistency during iterative transformations.
 
 ---
 
@@ -75,7 +77,7 @@ The **Inversion Engine** computes the negated drift vector:
 inv(d) = -d
 \]
 
-This enables examination of counter-aligned semantics and supports axis-focused compression experiments.
+**Inversion enables the study of counter-aligned semantic axes and stability breakdowns.**
 
 ---
 
@@ -86,7 +88,8 @@ A **Focus Field** applies a scaled inverted drift to a Morphotype:
 m' = m + (-d \cdot \alpha)
 \]
 
-Focus Fields highlight or reinforce structural features along selected axes.
+Focus Fields **highlight or amplify structural features**, but **they are not stabilizers**.  
+They act as *manipulative directional operators*, not regulatory mechanisms.
 
 ---
 
@@ -98,7 +101,9 @@ They are used to study:
 - mutation behavior  
 - diversification dynamics  
 
-Example artifact configuration:
+**Artifacts do NOT represent semantic entities — only structured perturbations.**
+
+Example configuration:
 
 ```python
 artifact = {
@@ -108,6 +113,7 @@ artifact = {
     "coherence_penalty": -0.05,
 }
 ```
+
 3. System Architecture
 
 SemanticTopologyEngine
