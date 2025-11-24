@@ -126,6 +126,7 @@ SemanticTopologyEngine (STE)
 │
 ├── Morphotype Manager
 ├── Drift Module
+├── Operators Module
 ├── Coherence Module
 ├── Inversion Module
 ├── Focus Field Module
